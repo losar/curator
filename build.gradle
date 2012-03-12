@@ -1,6 +1,6 @@
 // Establish version and status
 def performingRelease = project.hasProperty('release') && Boolean.parseBoolean(project.release)
-def releaseVersion = '1.1.4'
+def releaseVersion = '1.0.5'
 def versionPostfix = performingRelease?'':'-SNAPSHOT'
 version = "${releaseVersion}${versionPostfix}"
 status = performingRelease?'release':'snapshot'
@@ -28,7 +28,7 @@ subprojects
 
     dependencies
     {
-        compile('org.apache.zookeeper:zookeeper:3.4.2')
+        compile('org.apache.zookeeper:zookeeper:3.3.4')
         {
             exclude group: 'com.sun.jmx', module: 'jmxri'
             exclude group: 'com.sun.jdmk', module: 'jmxtools'
